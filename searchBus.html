@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="busDetalisController as busdtlctrl">
+
+
+        <div class="container">
+
+            <h1>Search Bus</h1>
+
+            <span>Category:</span><select ng-model="busdtlctrl.Category" ng-options="x for x in busdtlctrl.busCategory"></select> <br>
+            <span>Source:</span><select ng-model="busdtlctrl.Source" ng-options="x for x in busdtlctrl.busSource"></select> <br>
+            <span>Destination:</span><select ng-model="busdtlctrl.Destination" ng-options="x for x in busdtlctrl.busDestination"></select> <br>
+            <span>Enter Date:</span><input type="date" ng-model="busdtlctrl.DateValue" /> <br>
+                <input type="submit" value="search" ng-submit='busdtlctrl.bussearch()' />
+
+
+                <table style="width:25%">
+                    <tr>
+                        <th>BusName</th>
+                        <th>BusNumber</th>
+                        <th>CategoryID</th>
+                        <th>TotalSeats</th>
+                        <th>Option</th>
+                    </tr>
+                    <tr>
+                        <td>{{busdtlctrl.PostDataResponse.BusName}}</td>
+                        <td>{{busdtlctrl.PostDataResponse.BusNumber}}</td>
+                        <td>{{busdtlctrl.PostDataResponse.CategoryID}}</td>
+                        <td>{{busdtlctrl.PostDataResponse.TotalSeats}}</td>
+                        <td><input type="button" value="Book now" ng-click='busdtlctrl.busBookConfirm()' /></td>
+
+                </table>
+
+
+</div>
+
+        
+
+        
+
+
+
+    </div>
+
+
+
+</body>
+</html>

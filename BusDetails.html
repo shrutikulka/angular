@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div ng-controller="busDetalisController as busdtlctrl">
+
+        <!--<input type="button" value="BusDetails" ng-click='busdtlctrl.busdetails()' />-->
+        
+            <table style="width:25%">
+                <tr>
+                    <th>BusName</th>
+                    <th>BusNumber</th>
+                    <th>CategoryID</th>
+                    <th>TotalSeats</th>
+                </tr>
+
+            <tr ng-repeat="x in busdtlctrl.busData">
+                        <td>{{x.BusName}}</td>
+                        <td>{{x.BusNumber}}</td>
+                        <td>{{x.CategoryID}}</td>
+                        <td>{{x.TotalSeats}}</td>
+            </tr>
+
+            </table>
+
+        </div>
+</body>
+</html>

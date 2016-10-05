@@ -1,0 +1,119 @@
+﻿<div ng-controller="Admin as busdtlctrl">
+    <!--Source: <input type="text" ng-model="source"><br>
+    Destination: <input type="text" ng-model="destination"><br>
+    Catagory:<input type="text" ng-model="catagory"><br>
+    Date:<input type="date" ng-model="date"><br>-->
+    <br>
+
+    <input type="button" value="BusDetails" ng-click='busdtlctrl.busdetails()' style="padding:4px; margin:10px;" class="btn btn-primary" />
+    <input type="button" value="searchBus" class="btn btn-primary" ng-click="busdtlctrl.showbusSearch()" />
+    <input type="button" value="addBus" class="btn btn-primary" ng-click="busdtlctrl.showaddBus()" />
+    <input type="button" value="UpdateBus" class="btn btn-primary" ng-click="busdtlctrl.showeditBus()" />
+    <input type="button" value="DeleteBus" class="btn btn-primary" ng-click="busdtlctrl.showdeleteBus()" />
+
+
+    <div ng-show="busdtlctrl.showBusData">
+
+        <table style="width:25%; padding:5px; margin:10px; border:1px solid black;">
+            <tr>
+                <th>BusName</th>
+                <th>BusNumber</th>
+                <th>CategoryID</th>
+                <th>TotalSeats</th>
+            </tr>
+            <tr ng-repeat="x in busdtlctrl.busData">
+                <td>{{x.BusName}}</td>
+                <td>{{x.BusNumber}}</td>
+                <td>{{x.CategoryID}}</td>
+                <td>{{x.TotalSeats}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div style="margin:10px;" ng-show="busdtlctrl.searchBus">
+        <span><b>Enter Bus Id:</b></span>&nbsp; <input type="text" ng-model="busdtlctrl.BusNumber" style="margin-bottom:10px;" />
+        <input type="button" value="searchBus" ng-click="busdtlctrl.busSearch()" />
+
+        <table style="width:25%">
+            <tr>
+                <th>BusName</th>
+                <th>BusNumber</th>
+                <th>CategoryID</th>
+                <th>TotalSeats</th>
+            </tr>
+            <tr>
+                <td>{{busdtlctrl.busSearchDatas.BusName}}</td>
+                <td>{{busdtlctrl.busSearchDatas.BusNumber}}</td>
+                <td>{{busdtlctrl.busSearchDatas.CategoryID}}</td>
+                <td>{{busdtlctrl.busSearchDatas.TotalSeats}}</td>
+            </tr>
+        </table>
+
+
+
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+
+    <div style="margin:10px;" ng-show="busdtlctrl.addBus">
+
+        <header><h3><b>Add Bus</b></h3></header>
+
+
+
+        <span style="padding-right:3px;">BusName:</span>&nbsp;&nbsp;<input type="text" ng-model="busdtlctrl.BusName" style="padding:3px;" /><br>
+
+
+        <span style="padding-right:3px;">CategoryId:</span><input type="text" ng-model="busdtlctrl.CategoryID" style="padding:3px;" /><br>
+
+        <span style="padding-right:3px;">TotalSeats:</span>&nbsp;<input type="text" ng-model="busdtlctrl.TotalSeats" style="padding:3px;" /><br>
+
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.busaddSubmit()" /><br>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+
+    <div style="margin:10px;" ng-show="busdtlctrl.editBus">
+
+        <header><h3><b>Edit Bus</b></h3></header>
+
+        <span style="padding-right:3px;">BusId:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="edit.BusNumber" style="padding:3px;" /><br>
+
+        <span style="padding-right:3px;">BusName:</span>&nbsp;&nbsp;<input type="text" ng-model="edit.BusName" style="padding:3px;" /><br>
+
+
+        <span style="padding-right:3px;">CategoryId:</span><input type="text" ng-model="edit.CategoryID" style="padding:3px;" /><br>
+
+        <span style="padding-right:3px;">TotalSeats:</span><input type="text" ng-model="edit.TotalSeats" style="padding:3px;" /><br>
+
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.busEditSubmit(edit)" /><br>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+
+
+    <div style="margin:10px;" ng-show="busdtlctrl.deleteBus">
+
+        <header><h3><b>Delete Bus</b></h3></header>
+
+        <!--BusId:<input type="text" ng-model="busdtlctrl.BusNumber" /><br>-->
+        BusId:&nbsp;<input type="text" ng-model="busdtlctrl.BusNumber1" /><br>
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.busDelete(busdtlctrl.BusNumber1)" style="margin-top:5px; padding:4px;" /><br>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+
+
+</div>

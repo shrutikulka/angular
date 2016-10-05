@@ -1,0 +1,177 @@
+﻿<div ng-controller="Admin as busdtlctrl">
+
+    <div style="margin:10px;">
+        <br>
+
+        <input type="button" value="RouteDetails" ng-click='busdtlctrl.routedetails()'></input>
+        <div>
+
+
+            <table style="width:25%">
+                <tr>
+                    <th>RouteId</th>
+                    <th>SourceRoute</th>
+                    <th>DestinationRoute</th>
+                    <th>Distance</th>
+                    <th>Duration</th>
+                </tr>
+                <tr ng-repeat="x in busdtlctrl.routeData">
+                    <td>{{x.RouteId}}</td>
+                    <td>{{x.SourceRoute}}</td>
+                    <td>{{x.DestinationRoute}}</td>
+                    <td>{{x.Distance}}</td>
+                    <td>{{x.Duration}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <div>
+        Enter Route Id:<input type="text" ng-model="busdtlctrl.id" />
+        <input type="button" value="searchRoute" ng-click="busdtlctrl.routeSearch()" />
+        <br>
+        <table style="width:25%">
+            <tr>
+                <th>RouteId</th>
+                <th>SourceRoute</th>
+                <th>DestinationRoute</th>
+                <th>Distance</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>{{busdtlctrl.routeSearchData.SourceRoute}}</td>
+                <td>{{busdtlctrl.routeSearchData.DestinationRoute}}</td>
+                <td>{{busdtlctrl.routeSearchData.Distance}}</td>
+                <td>{{busdtlctrl.routeSearchData.Distance}}</td>
+                <td>{{busdtlctrl.routeSearchData.Duration}}</td>
+            </tr>
+        </table>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+
+    <div>
+
+
+
+
+        <header><h3><b>Add Route</b></h3></header>
+
+
+
+        Source:<input type="text" ng-model="busdtlctrl.SourceRoute" /><br>
+
+
+        Destination:<input type="text" ng-model="busdtlctrl.DestinationRoute" /><br>
+
+
+        Distance:<input type="text" ng-model="busdtlctrl.Distance" />
+
+        Duration:<input type="text" ng-model="busdtlctrl.Duration" />
+
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.routeaddSubmit()" /><br>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+    <div>
+
+
+
+
+        <header><h3><b>Edit Route</b></h3></header>
+
+        RouteId:<input type="text" ng-model="route.RouteId" /><br>
+
+        Source:<input type="text" ng-model="route.SourceRoute" /><br>
+
+
+        Destination:<input type="text" ng-model="route.DestinationRoute" /><br>
+
+
+        Distance:<input type="text" ng-model="route.Distance" />
+
+        Duration:<input type="text" ng-model="route.Duration" />
+
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.routeEditSubmit(route)" /><br>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+    <div>
+
+
+
+
+        <header><h3><b>Delete Bus</b></h3></header>
+
+        RouteId:<input type="text" ng-model="busdtlctrl.RouteId" /><br>
+
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.routeDelete()" /><br>
+
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+
+    <!--<div >
+        <br>
+
+        <input type="button" value="AllUsers" ng-click='busdtlctrl.userdetails()'></input>
+        <div ng-repeat="x in busdtlctrl.allUserDetails">
+            UserId:<label>{{x.UserId}}</label><br>
+            UserName:<label>{{x.UserName}}</label><br>
+            UserDOB:<label>{{x.UserDOB}}</label><br>
+            MobileNumber:<label>{{x.MobileNumber}}</label><br>
+            EmailID:<label>{{x.EmailID}}</label><br>
+            Passowrd:<label>{{x.Passowrd}}</label><br>
+
+            <table style="width:25%">
+                <tr>
+                    <th>UserId</th>
+                    <th>UserName</th>
+                    <th>UserDOB</th>
+                    <th>MobileNumber</th>
+                    <th>EmailID</th>
+                    <th>Passowrd</th>
+                </tr>
+                <tr>
+                    <td>{{x.UserId}}</td>
+                    <td>{{x.UserName}}</td>
+                    <td>{{x.UserDOB}}</td>
+                    <td>{{x.MobileNumber}}</td>
+                    <td>{{x.EmailID}}</td>
+                    <td>{{x.Passowrd}}</td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>-->
+
+    <div>
+
+
+
+
+        <!--<p>Delete Users</p>
+
+        UserId:<input type="text" ng-model="busdtlctrl.UserId" /><br>
+
+
+        <input type="button" value="Submit" ng-click="busdtlctrl.userDelete()" /><br>-->
+        <!--BusName:<input type="text" ng-model="this[busSearchData.BusNumber]"> </input><br>-->
+
+    </div>
+
+</div>

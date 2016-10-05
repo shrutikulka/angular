@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+
+<head>
+    <title>BusReservationSystem</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style: none;
+        }
+
+            ul li {
+                padding: 2px 5px;
+            }
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+            table tr:nth-child(odd) {
+                background-color: #f1f1f1;
+            }
+
+            table tr:nth-child(even) {
+                background-color: #ffffff;
+            }
+           
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+   
+    <center>
+        <h1> Welcome </h1>
+
+        <h2>Online Bus Ticket Reservation System</h2>
+
+        <div class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#User">User</a></li>
+                        <li><a href="#Admin">Administrator</a></li>
+                        <!--<li><a href="#Home" ng-click="loggedIn=false">LogOut</a></li>-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <img src="http://www.nin.hr/images/kako-do-nas-bus.png" alt="Online Bus" align="right" style="width:304px;height:228px;">
+    </center>
+         <div ng-view>  </div>
+
+    <script src="/AngularControllers/Routing.js"></script>
+    <script src="/AngularControllers/Admin.js"></script>
+    <script src="/AngularControllers/Users.js"></script>
+
+</body>
+</html>
